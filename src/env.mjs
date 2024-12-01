@@ -6,12 +6,14 @@ export const env = createEnv({
     NEXT_PUBLIC_APP_URL: z.string().min(1),
     NEXT_PUBLIC_SUPABASE_URL: z.string().min(1),
     NEXT_PUBLIC_GA_TAG_ID: z.string().min(1),
+    NEXT_PUBLIC_PHONE_NUMBER: z.string().min(1),
+    NEXT_PUBLIC_BUCKET_NAME: z.string().min(1),
   },
   server: {
     SUPABASE_ANON_KEY: z.string().min(1),
     SUPABAE_ADMIN: z.string().min(1),
     DATABASE_URL: z.string().min(1),
-    NEXT_PUBLIC_BUCKET_NAME: z.string().min(1),
+    PHONE_NUMBER: z.string().min(1),
   },
   runtimeEnv: {
     NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL,
@@ -20,5 +22,6 @@ export const env = createEnv({
     SUPABAE_ADMIN: process.env.SUPABAE_ADMIN,
     SUPABASE_ANON_KEY: process.env.SUPABASE_ANON_KEY,
     NEXT_PUBLIC_GA_TAG_ID: process.env.NEXT_PUBLIC_GA_TAG_ID,
+    PHONE_NUMBER: process.env.PHONE_NUMBER,
   },
 })
