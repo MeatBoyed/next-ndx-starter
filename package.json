@@ -11,6 +11,7 @@
     "format:check": "pnpm prettier ./src --check"
   },
   "dependencies": {
+    "@clerk/nextjs": "^6.5.1",
     "@hookform/resolvers": "^3.9.1",
     "@next/third-parties": "^15.0.3",
     "@radix-ui/react-checkbox": "^1.1.2",
@@ -33,6 +34,7 @@
     "react-dom": "^18.3.1",
     "react-hook-form": "^7.53.2",
     "sonner": "^1.7.0",
+    "svix": "^1.42.0",
     "tailwind-merge": "^2.3.0",
     "tailwindcss-animate": "^1.0.7",
     "zod": "^3.23.4"

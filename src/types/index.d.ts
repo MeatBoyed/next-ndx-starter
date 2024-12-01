@@ -1,3 +1,11 @@
+import { Role } from "./types"
+
+declare global {
+  interface CustomJwtSessionClaims {
+    role: Role
+  }
+}
+
 export type SiteConfig = {
   name: string
   author: string
