@@ -2,9 +2,12 @@ import "@/styles/globals.css"
 
 import type { Metadata, Viewport } from "next"
 import { Inter } from "next/font/google"
+import { GoogleAnalytics } from "@next/third-parties/google"
 
+import { env } from "@/env.mjs"
 import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
+import QueryProvider from "@/components/query-provider"
 import { ThemeProvider } from "@/components/theme-provider"
 
 const inter = Inter({ subsets: ["latin"] })
@@ -73,14 +76,19 @@ export default function RootLayout({ children }: RootLayoutProps) {
           inter.className
         )}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-        </ThemeProvider>
+        <QueryProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            {process.env.NODE_ENV === "production" && (
+              <GoogleAnalytics gaId={env.NEXT_PUBLIC_GA_TAG_ID} />
+            )}
+            {children}
+          </ThemeProvider>
+        </QueryProvider>
       </body>
     </html>
   )
