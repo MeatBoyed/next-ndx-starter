@@ -2,7 +2,7 @@ import { Role } from "./types"
 
 declare global {
   interface CustomJwtSessionClaims {
-    role: Role
+    roles: Role[]
   }
 }
 
